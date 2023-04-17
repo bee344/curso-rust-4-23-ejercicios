@@ -8,8 +8,9 @@ fn call_me(num: u32) {
 
 #[cfg(test)]
 mod tests {
+    use crate::call_me;
     #[test]
     fn call_function() {
-        call_me();
+        call_me(23);
     }
 }

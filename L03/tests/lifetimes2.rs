@@ -4,7 +4,6 @@
 // to the annotated parameters and the return type, what do
 // we need to change?
 
-
 // I AM NOT DONE
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
@@ -17,14 +16,15 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 
 #[cfg(test)]
 mod tests {
+    use crate::*;
     #[test]
     fn test_lifetime() {
         let string1 = String::from("long string is long");
         let result;
-        {
-            let string2 = String::from("xyz");
-            result = longest(string1.as_str(), string2.as_str());
-        }
+
+        let string2 = String::from("xyz");
+        result = longest(string1.as_str(), string2.as_str());
+
         println!("The longest string is {}", result);
     }
 }
