@@ -7,7 +7,7 @@ mod sausage_factory {
         String::from("Ginger")
     }
 
-    fn make_sausage() {
+    pub fn make_sausage() {
         get_secret_recipe();
         println!("sausage!");
     }
@@ -15,6 +15,7 @@ mod sausage_factory {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
 
     #[test]
     fn test_modules() {
